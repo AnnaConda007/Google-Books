@@ -2,22 +2,35 @@ import { TextField, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import { getBookData } from "../../utils/getBookData";
+import { IBook, setBooks } from "../../../redux/BooksSlice";
+import { useDispatch } from "react-redux";
 
 const SearchInput: React.FC = () => {
+  const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState<string>("");
+
+  const getBookAndSetStateBooks = async () => {
+    if (inputValue === "") return;
+    const books: Array<IBook> | void = await getBookData(inputValue);
+    if (!books) {
+      alert("Ошибка при получении данных");
+      console.error;
+      return;
+    }
+    dispatch(setBooks(books));
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = async (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      getBookData(inputValue);
+      await getBookAndSetStateBooks();
     }
   };
-
-  const handleSearchClick = () => {
-    getBookData(inputValue);
+  const handleSearchClick = async () => {
+    await getBookAndSetStateBooks();
   };
 
   return (
@@ -27,11 +40,11 @@ const SearchInput: React.FC = () => {
         value={inputValue}
         autoComplete="off"
         onChange={handleChange}
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyPress}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleSearchClick}>
+              <IconButton aria-label="Поиск" onClick={handleSearchClick}>
                 <SearchIcon />
               </IconButton>
             </InputAdornment>
