@@ -1,12 +1,12 @@
-import SearchInput from "./search-input/SearchInput";
-import SelectInput from "./select-input/SelectInput";
-import SortSelect from "./sort-select/SortSelect";
+import SearchIBookInput from "./search-book-input/SearchInput";
+import CategoryFilterDropdown from "./category-filter-dropdown/CategoryFilterDropdown";
+import RelevanceSorterDropdown from './sort-select/SortSelect';
 const Header: React.FC = () => {
   return (
     <>
-      <SearchInput />
-      <SelectInput />
-      <SortSelect />
+      <SearchIBookInput />
+      <CategoryFilterDropdown />
+      <RelevanceSorterDropdown />
     </>
   );
 };

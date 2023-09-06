@@ -6,23 +6,20 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { useState } from "react";
-import { filteredByCategories } from "../../../redux/BooksSlice";
+import { filterByCategory } from "../../../redux/BooksSlice";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { RootStoreState } from "../../../redux/store";
 import { BookCategories } from "../../../../enums";
 
-const SelectInput: React.FC = () => {
+const CategoryFilterDropdown: React.FC = () => {
   const dispatch = useDispatch();
-  const categories: Array<string> = Object.values(BookCategories);
+  const categories: Array<BookCategories> = Object.values(BookCategories);
   const [selectedСategory, setSelectedСategory] = useState<string>(
     categories[0]
   );
-  const books = useSelector((state: RootStoreState) => state.books);
 
   const handleChange = (e: SelectChangeEvent<string>) => {
     setSelectedСategory(e.target.value);
-    dispatch(filteredByCategories({ category: e.target.value }));
+    dispatch(filterByCategory(e.target.value));
   };
 
   return (
@@ -41,15 +38,8 @@ const SelectInput: React.FC = () => {
           ))}
         </Select>
       </FormControl>
-
-      <span>
-        *******{" "}
-        {books.filteredBooks.map((book) => {
-          return <p>{book.volumeInfo.title} </p>;
-        })}
-      </span>
     </>
   );
 };
 
-export default SelectInput;
+export default CategoryFilterDropdown;

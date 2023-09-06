@@ -10,7 +10,7 @@ import { setSort } from "../../../redux/BooksSlice";
 import { useState } from "react";
 import { SortType } from "./../../../../enums";
 
-const SortSelect: React.FC = () => {
+const RelevanceSorterDropdown: React.FC = () => {
   const dispatch = useDispatch();
   const sortType: Array<string> = Object.values(SortType);
   const [currentSortMethod, setCurrentSortMethod] = useState(sortType[0]);
@@ -38,4 +38,4 @@ const SortSelect: React.FC = () => {
   );
 };
 
-export default SortSelect;
+export default RelevanceSorterDropdown;
