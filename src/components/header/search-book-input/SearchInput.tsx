@@ -13,9 +13,12 @@ import {
 import { IBookData } from "../../../utils/getBookData";
 import styles from"./SearchInput.module.css"
 import TitleText from './title-text/TitleText';
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SearchIBookInput: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+const location = useLocation();
   const [inputValue, setInputValue] = useState<string>("");
 
   const fetchBooks = async (): Promise<void> => {
@@ -40,12 +43,19 @@ const SearchIBookInput: React.FC = () => {
   };
 
   const handleKeyPress = async (e: React.KeyboardEvent) => {
+
     if (!inputValue) return;
     if (e.key === "Enter") {
+      if (location.pathname !== "/") {
+        navigate("/");
+      }
       await fetchBooks();
     }
   };
   const handleSearchClick = async () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
     if (!inputValue) return;
     await fetchBooks();
   };

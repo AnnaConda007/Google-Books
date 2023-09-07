@@ -1,14 +1,9 @@
 .Grid {
   justify-content: space-evenly;
- }
-
-.GridItem { 
-  max-width: 100%; 
 }
-.Card {
-  margin-top: 30px;
-  max-width: 250px; 
-  border-radius: 0;
+
+.GridItem {
+  max-width: 100%;
 }
 
 .CardMediaWrap {
