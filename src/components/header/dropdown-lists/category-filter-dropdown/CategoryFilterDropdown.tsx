@@ -1,15 +1,9 @@
-import {
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  SelectChangeEvent,
-} from "@mui/material";
+import { Select, MenuItem, InputLabel, SelectChangeEvent } from "@mui/material";
 import { useState } from "react";
 import { filterByCategory } from "../../../../redux/BooksSlice";
 import { useDispatch } from "react-redux";
 import { BookCategories } from "../../../../../enums";
- 
+
 const CategoryFilterDropdown: React.FC = () => {
   const dispatch = useDispatch();
   const categories: Array<BookCategories> = Object.values(BookCategories);
@@ -24,20 +18,19 @@ const CategoryFilterDropdown: React.FC = () => {
 
   return (
     <>
-      <FormControl style={{padding:"0px"}}  fullWidth variant="outlined">
-        <InputLabel>Categories</InputLabel>
-        <Select  
-          value={selectedСategory}
-          onChange={handleChange}
-          label="Categories"
-        >
-          {categories.map((category) => (
-            <MenuItem key={category} value={category}>
-              {category}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      <InputLabel style={{ color: "white", width: "40%" }}>Categories</InputLabel>
+      <Select
+        value={selectedСategory}
+        onChange={handleChange}
+        label="Categories"
+        fullWidth
+      >
+        {categories.map((category) => (
+          <MenuItem key={category} value={category}>
+            {category}
+          </MenuItem>
+        ))}
+      </Select>
     </>
   );
 };

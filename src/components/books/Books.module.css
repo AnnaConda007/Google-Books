@@ -1,14 +1,13 @@
 .Grid {
   justify-content: space-evenly;
-}
+ }
 
 .GridItem { 
-  max-width: 100%;
-  margin-top: 20px;
+  max-width: 100%; 
 }
 .Card {
-  max-width: 250px;
-  padding: 20px 10px;
+  margin-top: 30px;
+  max-width: 250px; 
   border-radius: 0;
 }
 
@@ -18,8 +17,6 @@
   display: flex;
   justify-content: center;
 }
-
- 
 
 .Typography {
   text-decoration: underline;

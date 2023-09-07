@@ -61,9 +61,9 @@ const SearchIBookInput: React.FC = () => {
         onKeyDown={handleKeyPress}
         InputProps={{
           endAdornment: (
-            <InputAdornment position="end">
-              <IconButton aria-label="Поиск" onClick={handleSearchClick}>
-                <SearchIcon />
+            <InputAdornment position="end" >
+              <IconButton  aria-label="Поиск" onClick={handleSearchClick}>
+                <SearchIcon  />
               </IconButton>
             </InputAdornment>
           ),

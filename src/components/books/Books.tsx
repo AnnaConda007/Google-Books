@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootStoreState } from "../../../redux/store";
+import { RootStoreState } from "../../redux/store";
 import MoreLoadButton from "./more-load-button/MoreLoadButton";
 import {
   Typography,
@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 import styles from "./Books.module.css";
- const Books: React.FC = () => {
+const Books: React.FC = () => {
   const books = useSelector(
     (state: RootStoreState) => state.books.filteredBooks
   );
@@ -22,6 +22,7 @@ import styles from "./Books.module.css";
         {books.map((book) => (
           <Grid
             item
+            key={book.id}
             xs={12}
             sm={6}
             md={3}
@@ -82,7 +83,7 @@ import styles from "./Books.module.css";
           padding: "40px",
         }}
       >
-        <MoreLoadButton />
+        {books.length > 0 && <MoreLoadButton />}
       </div>
     </>
   );

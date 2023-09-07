@@ -1,7 +1,6 @@
 import {
   Select,
-  MenuItem,
-  FormControl,
+  MenuItem, 
   InputLabel,
   SelectChangeEvent,
 } from "@mui/material";
@@ -15,26 +14,30 @@ const RelevanceSorterDropdown: React.FC = () => {
   const sortType: Array<string> = Object.values(SortType);
   const [currentSortMethod, setCurrentSortMethod] = useState(sortType[0]);
 
+
   const handleChange = (e: SelectChangeEvent<string>) => {
-    dispatch(setSort(e.target.value));
-    setCurrentSortMethod(e.target.value);
-  };
+    const selectedSort: string = e.target.value;
+    dispatch(setSort(selectedSort as SortType));   
+    setCurrentSortMethod(selectedSort);
+};
 
   return (
-    <FormControl fullWidth variant="outlined">
-      <InputLabel>Sorting by</InputLabel>
+    <>
+      <InputLabel style={{ width: "40%", color: "white" }}>Sorting by</InputLabel>
       <Select
         value={currentSortMethod}
         onChange={handleChange}
         label="Sorting by"
+        fullWidth 
+            
       >
         {sortType.map((sort) => (
-          <MenuItem key={sort} value={sort}>
+          <MenuItem    key={sort} value={sort}>
             {sort}
           </MenuItem>
         ))}
       </Select>
-    </FormControl>
+    </>
   );
 };
 
