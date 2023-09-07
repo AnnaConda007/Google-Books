@@ -1,1 +1,1 @@
-export const paginationConstants: number = 5;
+export const paginationConstants: number = 30;

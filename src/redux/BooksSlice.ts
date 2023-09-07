@@ -3,7 +3,7 @@ import { SortType, BookCategories } from "../../enums";
 import { paginationConstants } from "../contains";
 
 export interface IBook {
-  id:string
+  etag:string
   searchInfo: { textSnippet: string };
   volumeInfo: {
     categories?: string[];

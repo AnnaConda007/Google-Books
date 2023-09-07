@@ -24,7 +24,7 @@ const Books: React.FC = () => {
             {books.map((book) => (
               <Grid
                 item
-                key={book.id}
+                key={`${book.etag}  `}
                 xs={12}
                 sm={6}
                 md={3}
