@@ -1,12 +1,10 @@
 import SearchIBookInput from "./search-book-input/SearchInput";
-import CategoryFilterDropdown from "./category-filter-dropdown/CategoryFilterDropdown";
-import RelevanceSorterDropdown from './sort-select/SortSelect';
+import DropdownLists from "./dropdown-lists/dropdownLists";
 const Header: React.FC = () => {
   return (
     <>
       <SearchIBookInput />
-      <CategoryFilterDropdown />
-      <RelevanceSorterDropdown />
+      <DropdownLists />
     </>
   );
 };

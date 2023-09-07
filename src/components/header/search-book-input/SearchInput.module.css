@@ -1,0 +1,19 @@
+.InputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center; 
+}
+
+.TextField{
+width: 100%;
+max-width: 500px;
+height:30px ;  
+margin-bottom: 10px;
+}
+
+
+.TextField input {
+  height: 30px;
+  padding: 0;  
+}

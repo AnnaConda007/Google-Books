@@ -6,9 +6,9 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { setSort } from "../../../redux/BooksSlice";
+import { setSort } from "../../../../redux/BooksSlice";
 import { useState } from "react";
-import { SortType } from "./../../../../enums";
+import { SortType } from "../../../../../enums";
 
 const RelevanceSorterDropdown: React.FC = () => {
   const dispatch = useDispatch();

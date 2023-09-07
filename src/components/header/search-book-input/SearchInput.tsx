@@ -1,7 +1,7 @@
 import { TextField, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { getBookDataAsync } from "../../utils/getBookData";
+import { getBookDataAsync } from "../../../utils/getBookData";
 import { setBooks, resetBook } from "../../../redux/BooksSlice";
 import { useDispatch, batch } from "react-redux";
 import {
@@ -10,7 +10,10 @@ import {
   resetStartIndexForNextLoadBook,
   setTotalItemsBook,
 } from "../../../redux/BooksSlice";
-import { IBookData } from "../../utils/getBookData";
+import { IBookData } from "../../../utils/getBookData";
+import styles from"./SearchInput.module.css"
+import TitleText from './title-text/TitleText';
+
 const SearchIBookInput: React.FC = () => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState<string>("");
@@ -48,8 +51,9 @@ const SearchIBookInput: React.FC = () => {
   };
 
   return (
-    <>
-      <TextField
+    <div className={styles.InputContainer}>
+      <TitleText/>
+      <TextField className={styles.TextField} 
         id="standard-basic"
         value={inputValue}
         autoComplete="off"
@@ -65,7 +69,7 @@ const SearchIBookInput: React.FC = () => {
           ),
         }}
       />
-    </>
+    </div>
   );
 };
 

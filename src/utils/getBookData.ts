@@ -1,5 +1,5 @@
-import { IBook } from "../../redux/BooksSlice";
-import { paginationConstants } from "../../contains";
+import { IBook } from "../redux/BooksSlice";
+import { paginationConstants } from "../contains";
 
 export interface IBookData {
   totalItems: number;

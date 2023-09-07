@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootStoreState } from "../../../../redux/store";
-import { IBookData } from "../../../utils/getBookData";
-import { getBookDataAsync } from "../../../utils/getBookData";
-import { setBooks } from "../../../../redux/BooksSlice";
+import { RootStoreState } from '../../../redux/store';
+import { IBookData } from '../../../utils/getBookData';
+import { getBookDataAsync } from '../../../utils/getBookData';
+import { setBooks } from '../../../redux/BooksSlice';
 import styles from "./MoreLoadButton.module.css";
 import Button from "@mui/material/Button/Button";
 const MoreLoadButton: React.FC = () => {

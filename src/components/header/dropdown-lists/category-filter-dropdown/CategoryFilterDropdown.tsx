@@ -6,10 +6,10 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { useState } from "react";
-import { filterByCategory } from "../../../redux/BooksSlice";
+import { filterByCategory } from "../../../../redux/BooksSlice";
 import { useDispatch } from "react-redux";
-import { BookCategories } from "../../../../enums";
-
+import { BookCategories } from "../../../../../enums";
+ 
 const CategoryFilterDropdown: React.FC = () => {
   const dispatch = useDispatch();
   const categories: Array<BookCategories> = Object.values(BookCategories);
@@ -24,9 +24,9 @@ const CategoryFilterDropdown: React.FC = () => {
 
   return (
     <>
-      <FormControl fullWidth variant="outlined">
+      <FormControl style={{padding:"0px"}}  fullWidth variant="outlined">
         <InputLabel>Categories</InputLabel>
-        <Select
+        <Select  
           value={selectedСategory}
           onChange={handleChange}
           label="Categories"
