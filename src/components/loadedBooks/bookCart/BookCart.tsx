@@ -1,8 +1,8 @@
-import { Typography, CardContent, CardMedia, Card, Box } from "@mui/material";
-import { IBook } from "../../../redux/BooksSlice";
-import styles from "./BookCart.module.css";
+import { Typography, CardContent, CardMedia, Card, Box } from '@mui/material'
+import styles from './BookCart.module.css'
+import { IBook } from '../../../redux/BooksSlice'
 interface BookCartProps {
-  book: IBook;
+  book: IBook
 }
 
 const BookCart: React.FC<BookCartProps> = ({ book }) => {
@@ -10,41 +10,31 @@ const BookCart: React.FC<BookCartProps> = ({ book }) => {
     <Card className={styles.Card} elevation={0}>
       <div className={styles.CardMediaWrap}>
         <CardMedia
-          style={{ width: "70%" }}
-          component="img"
-          image={
-            book.volumeInfo.imageLinks
-              ? book.volumeInfo.imageLinks.thumbnail ||
-                book.volumeInfo.imageLinks.smallThumbnail
-              : " "
-          }
+          style={{ width: '70%' }}
+          component='img'
+          image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail || book.volumeInfo.imageLinks.smallThumbnail : ' '}
           alt={book.volumeInfo.title}
         />
       </div>
       <CardContent>
         {book.volumeInfo.categories && (
-          <Typography
-            className={styles.TypographyСategories}
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            {book.volumeInfo.categories[0].split(" ")[0]}
+          <Typography className={styles.TypographyСategories} variant='body2' color='textSecondary' component='p'>
+            {book.volumeInfo.categories[0].split(' ')[0]}
           </Typography>
         )}
         <Box mt={1}>
-          <Typography variant="body1" fontWeight="bold" component="div">
+          <Typography variant='body1' fontWeight='bold' component='div'>
             {book.volumeInfo.title}
           </Typography>
           {book.volumeInfo.authors && (
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant='body2' color='textSecondary' component='p'>
               {book.volumeInfo.authors}
             </Typography>
           )}
         </Box>
       </CardContent>
     </Card>
-  );
-};
+  )
+}
 
-export default BookCart;
+export default BookCart

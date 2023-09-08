@@ -1,30 +1,23 @@
-import { Select, MenuItem, InputLabel, SelectChangeEvent } from "@mui/material";
-import { useState } from "react";
-import { filterByCategory } from "../../../../redux/BooksSlice";
-import { useDispatch } from "react-redux";
-import { BookCategories } from "../../../../../enums";
+import { useState } from 'react'
+import { Select, MenuItem, InputLabel, SelectChangeEvent } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { BookCategories } from '../../../../../enums'
+import { filterByCategory } from '../../../../redux/BooksSlice'
 
 const CategoryFilterDropdown: React.FC = () => {
-  const dispatch = useDispatch();
-  const categories: Array<BookCategories> = Object.values(BookCategories);
-  const [selectedСategory, setSelectedСategory] = useState<string>(
-    categories[0]
-  );
+  const dispatch = useDispatch()
+  const categories: Array<BookCategories> = Object.values(BookCategories)
+  const [selectedСategory, setSelectedСategory] = useState<string>(categories[0])
 
   const handleChange = (e: SelectChangeEvent<string>) => {
-    setSelectedСategory(e.target.value);
-    dispatch(filterByCategory(e.target.value));
-  };
+    setSelectedСategory(e.target.value)
+    dispatch(filterByCategory(e.target.value))
+  }
 
   return (
     <>
-      <InputLabel style={{ color: "white", width: "40%" }}>Categories</InputLabel>
-      <Select
-        value={selectedСategory}
-        onChange={handleChange}
-        label="Categories"
-        fullWidth
-      >
+      <InputLabel style={{ color: 'white', width: '40%' }}>Categories</InputLabel>
+      <Select value={selectedСategory} onChange={handleChange} label='Categories' fullWidth>
         {categories.map((category) => (
           <MenuItem key={category} value={category}>
             {category}
@@ -32,7 +25,7 @@ const CategoryFilterDropdown: React.FC = () => {
         ))}
       </Select>
     </>
-  );
-};
+  )
+}
 
-export default CategoryFilterDropdown;
+export default CategoryFilterDropdown

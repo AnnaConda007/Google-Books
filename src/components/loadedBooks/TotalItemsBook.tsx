@@ -1,14 +1,12 @@
 interface TotalItemsBookProps {
-  totalItemsText: string;
+  totalItemsText: string
 }
-const TotalItemsBook: React.FC<TotalItemsBookProps> = ({
-  totalItemsText,
-}) => {
+const TotalItemsBook: React.FC<TotalItemsBookProps> = ({ totalItemsText }) => {
   return (
-    <div style={{ width: "100%", textAlign: "center" , margin: "10px" }}>
+    <div style={{ width: '100%', textAlign: 'center', margin: '10px' }}>
       <span>{totalItemsText} </span>
     </div>
-  );
-};
+  )
+}
 
-export default TotalItemsBook;
+export default TotalItemsBook

@@ -1,6 +1,6 @@
-import CategoryFilterDropdown from "../category-filter-dropdown/CategoryFilterDropdown";
-import RelevanceSorterDropdown from "../sort-select-dropdown/SortSelect";
-import styles from "./GroupedDropDownContainer.module.css";
+import styles from './GroupedDropDownContainer.module.css'
+import CategoryFilterDropdown from '../category-filter-dropdown/CategoryFilterDropdown'
+import RelevanceSorterDropdown from '../sort-select-dropdown/SortSelect'
 
 const GroupedDropDownContainer: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const GroupedDropDownContainer: React.FC = () => {
         <RelevanceSorterDropdown />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default GroupedDropDownContainer;
+export default GroupedDropDownContainer
