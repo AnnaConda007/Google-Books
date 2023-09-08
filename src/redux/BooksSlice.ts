@@ -6,6 +6,7 @@ export interface IBook {
   etag: string
   searchInfo: { textSnippet: string }
   volumeInfo: {
+    description?:string
     categories?: string[]
     title: string
     authors?: string[]

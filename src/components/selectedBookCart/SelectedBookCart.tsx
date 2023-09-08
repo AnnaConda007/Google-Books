@@ -30,10 +30,10 @@ const SelectedBookCart: React.FC<SelectedBookCartProps> = ({ selectedBook }) => 
             {selectedBook.volumeInfo.authors.join(', ')}
           </Typography>
         )}
-        {selectedBook.searchInfo.textSnippet && (
+        {selectedBook.volumeInfo.description && (
           <Box mt={3}>
             <Typography className={styles.TypographyAuthorTextSnippet} variant='body1'>
-              {selectedBook.searchInfo.textSnippet}
+              {selectedBook.volumeInfo.description}
             </Typography>
           </Box>
         )}
