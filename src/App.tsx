@@ -1,10 +1,10 @@
 import { ThemeProvider } from "@mui/material/styles";
 import themeMUI from "./themeMUI";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/header/Header";
-import Home from "./components/routes/Home";
-import SelectedBookContent from './components/routes/SelectedBookContent';
-import "./App.css"
+import Header from "./components/headers_component/header/Header";
+import Home from "./routes/Home";
+import SelectedBookContent from "./routes/SelectedBookt";
+import "./App.css";
 function App() {
   return (
     <ThemeProvider theme={themeMUI}>
@@ -12,8 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:bookTitle" element={<SelectedBookContent />} />
-
+          <Route path="/:etag" element={<SelectedBookContent />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

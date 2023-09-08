@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
-import { RootStoreState } from "../../redux/store";
-import MoreLoadButton from "./more-load-button/MoreLoadButton";
+import { RootStoreState } from "../../../redux/store";
+import MoreLoadButton from "../more-load-button/MoreLoadButton";
 import { Grid, CardActionArea } from "@mui/material";
-import TotalItemsBook from "./TotalItemsBook";
-import styles from "./Books.module.css";
+import TotalItemsBook from "../TotalItemsBook";
+import styles from "./LoadedBooksDisplay.module.css";
 import { useNavigate } from "react-router-dom";
-import BookCart from "./bookCart/BookCart";
+import BookCart from "../bookCart/BookCart";
 
-const Books: React.FC = () => {
+const LoadedBooksDisplay: React.FC = () => {
   const navigate = useNavigate();
   const books = useSelector(
     (state: RootStoreState) => state.books.filteredBooks
@@ -24,7 +24,7 @@ const Books: React.FC = () => {
             {books.map((book) => (
               <Grid
                 item
-                key={`${book.etag}  `}
+                key={`${book.etag}`}
                 xs={12}
                 sm={6}
                 md={3}
@@ -32,8 +32,8 @@ const Books: React.FC = () => {
                 style={{ flexBasis: "250px" }}
               >
                 <CardActionArea
-                  onClick={() => {
-                    navigate(`${book.volumeInfo.title}`);
+                  onClick={() => { 
+                    navigate(`${book.etag}`);
                   }}
                 >
                   <BookCart book={book} />
@@ -48,4 +48,4 @@ const Books: React.FC = () => {
   );
 };
 
-export default Books;
+export default LoadedBooksDisplay;

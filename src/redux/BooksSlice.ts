@@ -8,9 +8,9 @@ export interface IBook {
   volumeInfo: {
     categories?: string[];
     title: string;
-    authors: string[];
+    authors?: string[];
     publishedDate?: string;
-    imageLinks: {
+    imageLinks?: {
       smallThumbnail: string;
       thumbnail: string;
     };
