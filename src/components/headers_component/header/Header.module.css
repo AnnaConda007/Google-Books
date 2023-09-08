@@ -4,7 +4,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("../../../public/book-background.jpg");
+    url("/public/book-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
