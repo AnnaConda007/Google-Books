@@ -33,7 +33,7 @@ const SelectedBookCart: React.FC<SelectedBookCartProps> = ({ selectedBook }) => 
         {selectedBook.volumeInfo.description && (
           <Box mt={3}>
             <Typography className={styles.TypographyAuthorTextSnippet} variant='body1'>
-              {selectedBook.volumeInfo.description}
+              {selectedBook.volumeInfo.description.substring(0, 200) + (selectedBook.volumeInfo.description.length > 200 ? '...' : '')}
             </Typography>
           </Box>
         )}
